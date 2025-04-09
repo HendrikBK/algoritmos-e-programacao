@@ -67,15 +67,70 @@ int main() {
 */
 
 // 5 Ler um número inteiro, calcular e apresentar o fatorial deste número
+/*
+int main() {
+    int valor, total=1, i;
+    printf("Informe o valor: ");
+    scanf("%d", &valor);
+    if (valor < 0) {
+        printf("Número negativo.\n");
+        return 0;
+    }
+    for (i=valor; i >= 1; i--) {
+        total *= i;
+    }
+    printf("%d! = %d\n", valor, total);
+    return 0;
+}
+*/
 
 int main() {
-    int i, valor, total=0;
-    printf("Informe um inteiro: ");
-    scanf("%d", &valor);
-    for (i = valor; i > 2; i--) {
-        total = valor * (valor - 1);
-        valor -= 1;
+    int i, habitantes, idade, idade_max=0, idade_min=0, habitantes_f=0, idade_menor_sal;
+    char sexo, sexo_min; 
+    float salario, salario_soma=0, salario_min=0, media;
+    printf("Informe a quantidade de habitantes: ");
+    scanf("%d", &habitantes);
+    if (habitantes <= 0) {
+        printf("Número inválido de habitantes.\n");
+        return 0;
     }
-    printf("%d", total);
+    for (i=1; i <= habitantes; i++) {
+        printf("Informe os dados do %dº habitante.\n", i);
+        printf("Informe a idade do habitante: ");
+        scanf("%d", &idade);
+        printf("Informe o salário do habitante: ");
+        scanf("%f", &salario);
+        printf("Informe o sexo do habitante: ");
+        scanf(" %c", &sexo);
+        salario_soma += salario;
+        if (i == 1) {
+            idade_max = idade;
+            idade_min = idade;
+            salario_min = salario;
+            idade_menor_sal = idade;
+            sexo_min = sexo;
+        }
+        if (idade > idade_max) {
+            idade_max = idade;
+        }
+        if (idade < idade_min) {
+            idade_min = idade;
+        }
+        if (salario < salario_min) {
+            salario_min = salario;
+            sexo_min = sexo;
+            idade_menor_sal = idade;
+        }
+        if (sexo == 'F' || sexo == 'f') {
+            habitantes_f++;
+        }
+    }
+    media = salario_soma / habitantes;
+    printf("Média de salários: R$ %.2f.\n", media);
+    printf("Maior idade: %d.\n", idade_max);
+    printf("Menor idade: %d.\n", idade_min);
+    printf("Quantidade de mulheres: %d.\n", habitantes_f);
+    printf("Idade do habitante com o menor salário: %d.\n", idade_menor_sal);
+    printf("Sexo do habitante com o menor salário: %c.\n", sexo_min);
     return 0;
 }
