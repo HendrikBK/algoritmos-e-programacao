@@ -44,7 +44,7 @@ int main() {
 // 3
 /*
 int main() {
-    int i, valor;
+    int i;
     for (i = 1; i <= 25; i++) {
         if (i % 2 == 0)
             printf("%d é par.\n", i);
@@ -70,7 +70,8 @@ int main() {
             }
             if ( codigo == 1) {
                 total_coelhos += valor;
-            } else {
+            }
+            if ( codigo == 2 ) {
                 total_ratos += valor;
             }
         } while( codigo != 1 && codigo != 2 );
