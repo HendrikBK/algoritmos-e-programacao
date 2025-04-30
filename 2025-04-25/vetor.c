@@ -59,8 +59,7 @@ int main() {
     }
     printf("Menor temperatura do ano: %.1fºC\n", temp_menor);
     printf("Maior temperatura do ano: %.1fºC\n", temp_maior);
-    printf("Temperatura média: %.1fºC\n", temp_media);
-    printf("A temperatura foi menor que a média durante %d dias do ano.\n", qtd_menor);
+    printf("Temperatura média: %.1fºC\n", temp_media);    printf("A temperatura foi menor que a média durante %d dias do ano.\n", qtd_menor);
     return 0;
 }
 */
@@ -68,6 +67,7 @@ int main() {
 /* Ler dois vetores com 15 elementos inteiros (A e B). Gerar um terceiro valor (C) que armazenará a soma
 dos elementos nas posições correspondentes dos vetores A e B. Apresentar na tela o vetor C. */
 
+/*
 #include <stdio.h>
 
 int main() {
@@ -83,6 +83,71 @@ int main() {
     }
     for (i=0; i < x; i++) {
         printf("%dº valor do conjunto C: %d\n", i+1, c[i]);
+    }
+    return 0;
+}
+*/
+
+/* Ler dois vetores (A e B) com 10 elementos inteiros cada. O programa deve gerar um novo vetor (C), no qual os elementos
+correspondem aos elementos dos vetores A e B intercalados. Por exemplo, A = [1, 3, 6, 9, 0], B = [8, 5, 1, 7, -7], C = [1, 8, 3, 5, 6, 1, 9, 7, 0, -7].
+Apresentar na tela o vetor gerado */
+/*
+#include <stdio.h>
+
+int main() {
+    int x = 3;
+    int y = x * 2;
+    int A[x], B[x], C[y];
+    int i, j=0;
+    for (i=0; i < x; i++) {
+        printf("Informe o valor para A[%d]: ", i);
+        scanf("%d", &A[i]);
+    }
+    for (i=0; i < x; i++) {
+        printf("Informe o valor para B[%d]: ", i);
+        scanf("%d", &B[i]);
+    }
+    for (i=0; i < x*2; i++) {
+        C[j] = A[i];
+        C[j+1] = B[i];
+        j += 2;
+    }
+    for (i=0; i < x*2; i++) {
+        printf("C[%d] = %d\n", i, C[i]);
+    }
+    return 0;
+}
+*/
+
+/* Ler um vetor com 20 elementos inteiros e gerar dois novos vetores. Um com os elementos negativos e outro
+com os positivos. Apresentar na tela os três valores. */
+
+#include <stdio.h>
+
+int main() {
+    int x=3;
+    int val[x], pos[x], neg[x], i, i_pos=0, i_neg=0;
+    for (i=0; i < x; i++) {
+        printf("Informe o valor para a[%d]: ", i);
+        scanf("%d", &val[i]);
+    }
+    for (i=0; i < x; i++) {
+        if (val[i] > 0) {
+            pos[i_pos] = val[i];
+            i_pos++;
+        } else if (val[i] < 0) {
+            neg[i_neg] = val[i];
+            i_neg++;
+        }
+    }
+    for (i=0; i < x; i++) {
+        printf("Valores[%d] = %d\n", i, val[i]);
+    }
+    for (i=0; i < i_pos; i++) {
+        printf("Positivos[%d] = %d\n", i, pos[i]);
+    }
+    for (i=0; i < i_neg; i++) {
+        printf("Negativos[%d] = %d\n", i, neg[i]);
     }
     return 0;
 }
