@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 // 1
 /*
@@ -133,7 +134,111 @@ int main() {
 */
 
 // 8
-
+/*
 int main() {
-    
+    char palavra[31], letra;
+    int i;
+    printf("Informe a palavra: ");
+    scanf("%s", palavra);
+    printf("Informe a letra: ");
+    scanf(" %c", &letra);
+    for (i=0; palavra[i] != '\0'; i++) {
+        if (palavra[i] == letra)
+            palavra[i] = '*';
+    }
+    printf("%s", palavra);
+    return 0;
 }
+*/
+
+// 9
+/*
+int main() {
+    char prenome[21], sobrenome[21], nome_completo[42], espaco[2];
+    espaco[0] = ' ';
+    espaco[1] = '\0';
+    printf("Informe o prenome: ");
+    gets(prenome);
+    printf("Informe o sobrenome: ");
+    gets(sobrenome);
+    strcpy(nome_completo, prenome);
+    strcat(nome_completo, espaco);
+    strcat(nome_completo, sobrenome);
+    printf("%s", nome_completo);
+    return 0;
+}
+*/
+
+// 10
+/*
+int main() {
+    char palavra[31], letra;
+    int i;
+    printf("Informe a palavra: ");
+    gets(palavra);
+    do {
+        printf("Deseja converter a palavra para letras (m)aiúsculas ou mi(n)úsculas?");
+        scanf(" %c", &letra);
+    } while (letra != 'm' && letra != 'n');
+    if (letra == 'm')
+        strupr(palavra);
+    else
+        strlwr(palavra);
+    printf("%s", palavra);
+    return 0;
+}
+*/
+
+// 11
+/*
+int main() {
+    char palavra[31], letra;
+    int i, qtd=0;
+    printf("Informe a palavra: ");
+    gets(palavra);
+    printf("Informe o caractere: ");
+    scanf(" %c", &letra);
+    for (i=0; i < strlen(palavra); i++) {
+        if (palavra[i] == letra)
+            qtd++;
+    }
+    if (qtd == 0)
+        printf("O catactere %c não ocorre na palavra %s.\n", letra, palavra);
+    else
+        printf("O catactere %c ocorre %d vezes na palavra %s.\n", letra, qtd, palavra);
+    return 0;
+}
+*/
+
+// 12
+/*
+int main() {
+    char frase[101];
+    int i, qtd=0;
+    printf("Informe a frase: ");
+    scanf("%[^\n]", frase);
+    for (i=0; frase[i] != '\0'; i++) {
+        if (frase[i] == ' ')
+            qtd++;
+    }
+    printf("Existem %d espaços em branco na frase.\n", qtd);
+    return 0;
+}
+*/
+
+// 13
+/*
+int main() {
+    char frase[101];
+    int i, qtd=0;
+    printf("Informe a frase: ");
+    scanf("%[^\n]", frase);
+    for (i=0; frase[i] != '\0'; i++) {
+        if (frase[i] != ' ')
+            qtd++;
+    }
+    printf("Existem %d caracteres diferentes de espaço em branco.\n", qtd);
+    return 0;
+}
+*/
+
