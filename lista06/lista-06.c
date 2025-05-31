@@ -53,6 +53,7 @@ int main() {
 
 /* 03 */
 
+/*
 int main() {
     int l, c, menor;
     printf("Informe a quantidade de linhas da matriz: ");
@@ -94,4 +95,153 @@ int main() {
         printf("\n");
     }
     return 0;
+}
+*/
+
+/* 04 */
+
+/*
+int main() {
+    int l, c;
+    printf("Informe a quantidade de linhas da matriz: ");
+    scanf("%d", &l);
+    printf("Informe a quantidade de colunas da matriz: ");
+    scanf("%d", &c);
+    int a[l][c], b[l][c], total[l][c], i, j;
+    for (i=0; i < l; i++) {
+        for (j=0; j < c; j++) {
+            printf("Informe o valor para a[%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);            
+            printf("Informe o valor para b[%d][%d]: ", i, j);
+            scanf("%d", &b[i][j]);
+        }
+    }
+    for (i=0; i < l; i++) {
+        for (j=0; j < c; j++) {
+            total[i][j] = a[i][j] + b[i][j];
+        }
+    }
+    printf("Matriz A:\n");
+    for (i=0; i < l; i++) {
+        for (j=0; j < c; j++) {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n\n");
+    }
+    printf("Matriz B:\n");
+    for (i=0; i < l; i++) {
+        for (j=0; j < c; j++) {
+            printf("%d\t", b[i][j]);
+        }
+        printf("\n\n");
+    }
+    printf("Matriz C:\n");
+    for (i=0; i < l; i++) {
+        for (j=0; j < c; j++) {
+            printf("%d\t", total[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+
+/* 05 */
+
+/*
+int main() {
+    a[5][5], b[5], c[5], i, j; // a = matriz; b = soma linhas de a; c = soma colunas de a;
+    for (i=0; i < l; i++) {
+        for (j=0; j < c; j++) {
+            printf("Informe o valor para a[%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);    
+        }
+    }
+    for (i=0; i < 5; i++) {
+        for (j=0; j < 5; j++) {
+            b[i] += a[i][j];
+        }
+    }
+}
+*/
+
+/* 06 */
+
+/*
+int main() {
+    int l, c;
+    printf("Informe o número de linhas da matriz: ");
+    scanf("%d", &l);
+    printf("Informe o número de colunas da matriz: ");
+    scanf("%d", &c);
+    int a[l][c], i, j;
+    printf("Informe os valores: ");
+    for (i=0; i < l; i++) {
+        printf("Linha %d: ", l);
+        for (j=0; j < c; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    int linha;
+    do {
+    printf("Informe a linha desejada: ");
+    scanf("%d", &linha);
+    if (linha >= l)
+        printf("Valor inválido. Informe um valor menor que %d.\n", l);
+    } while (linha >= l);
+    int final[c];
+    for (i=0; i < c; i++) {
+        final[i] = a[linha][i];
+    }
+    printf("Matriz: \n");
+    for (i=0; i < l; i++) {
+        for (j=0; j < c; j++) {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nSoma da linha %d (invertido): \n", linha);
+    for (i = c-1; i >= 0; i--) {
+        printf("%d\t", final[i]);
+    }
+    return 0;
+}
+*/
+
+/* 07 */
+
+/*
+int main() {
+    int a[2][3], i, j;
+    for (i=0; i < 2; i++) {
+        printf("Informe os valores da linha %d: \n", i);
+        for (j=0; j < 3; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    printf("Matriz transposta: \n");
+    for (i=0; i < 3; i++) {
+        for (j=0; j < 2; j++) {
+            printf("%d\t", a[j][i]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+
+/* 08 */
+
+int main() {
+    float a[5][10], maior[5];
+    int i, j;
+    for (i=0; i < 5; i++) {
+        printf("Informe a altura dos atletas: \n");
+        for (j=0; j < 10; i++) {
+            printf("Atleta %f: ");
+            scanf("%f", &a[i][j]);
+        }
+        maior[i] = 0;
+    }
+    for ("")
 }
