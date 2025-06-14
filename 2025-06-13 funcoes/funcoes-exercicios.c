@@ -30,6 +30,7 @@ Um ano é bissexto se:
 2 - Não é divisível por 100;
 3 - Se for divisível por 400;
 4 - As últimas regras prevalecem sobre as primeiras.*/
+/*
 
 #include <stdio.h>
 
@@ -56,3 +57,51 @@ int main() {
     }
     return 0;
 }
+*/
+
+/* 1 - Ler ums tring com tamanho máximo de 30 caracteres e usar uma função que recebe a string como parâmetro e a exibe verticalmente na tela */
+
+/*
+#include <stdio.h>
+
+void mostrar(char palavra[]) {
+    for (int i=0; palavra[i]; i++) {
+        printf("%c\n", palavra[i]);
+    }
+}
+
+int main() {
+    char palavra[31];
+    printf("Informe a palavra: ");
+    scanf("%s", palavra);
+    mostrar(palavra);
+    return 0;
+}
+*/
+
+/* Faça um programa que conta o número de caracteres minúsculos em uma frase qualquer fornecida pelo usuário. Leia a frase no programa
+principal, passe como parêmetro para uma função, que deverá contar e retornar o resultado */
+
+/*
+#include <stdio.h>
+#include <ctype.h>
+
+int contar(char frase[]) {
+    int qtd=0, i;
+    for (i=0; frase[i]; i++) {
+        if (islower(frase[i])) {
+            qtd++;
+        }
+    }
+    return qtd;
+}
+
+int main() {
+    char frase[101];
+    printf("Informe a frase: ");
+    scanf("%[^\n]", frase);
+    printf("Existem %d caracteres minúsculos na frase.\n", contar(frase));
+    return 0;
+}
+
+*/
