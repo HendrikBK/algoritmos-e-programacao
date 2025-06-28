@@ -21,10 +21,10 @@ int main() {
 
 // 2
 
-
+/*
 #include <stdio.h>
 
-/*
+
 int maior(int a, int b) {
     if (a > b)
         return a;
@@ -92,7 +92,61 @@ int main() {
 }
 */
 
-// 5
+// 6
 
+/*
 #include <stdio.h>
 
+int primo(int numero) {
+    int i;
+    for (i=2; i < numero; i++) {
+        if (numero % i == 0)
+            return 0;
+    }
+    return 1;
+}
+
+int main() {
+    int numero;
+    printf("Insira o número: ");
+    scanf("%d", &numero);
+    if (primo(numero))
+        printf("O número %d é primo.\n", numero);
+    else
+        printf("O número %d não é primo.\n", numero);
+    return 0;
+}
+*/
+
+// 8
+
+/*
+#include <stdio.h>
+
+float desconto(float valor, float taxa) {
+    return valor * (taxa / 100);
+}
+
+float valor_venda(float valor, float taxa, int qtd) {
+    return (valor - desconto(valor, taxa)) * qtd;
+}
+
+int main() {
+    int qtd;
+    float valor, taxa;
+    printf("Informe o valor do produto: ");
+    scanf("%f", &valor);
+    printf("Informe o desconto concedido (%%): ");
+    scanf("%f", &taxa);
+    printf("Informe a quantidade de vendas: ");
+    scanf("%d", &qtd);
+    printf("Preço original: %.2f\n", valor);
+    printf("Valor com desconto: %.2f\n", valor - desconto(valor, taxa));
+    printf("Total de venda: %.2f\n", valor_venda(valor, taxa, qtd));
+    return 0;
+}
+*/
+
+// 9
+
+#include <stdio.h>
