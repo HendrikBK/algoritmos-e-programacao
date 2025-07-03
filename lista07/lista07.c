@@ -147,6 +147,100 @@ int main() {
 }
 */
 
-// 9
-
+// 10
+/*
 #include <stdio.h>
+
+int palindromo(char frase[]) {
+    int i, j=-1;
+    for (i=0; frase[i]; i++) {
+        j++;
+    }
+    for(i=0, j; i <= j; i++, j--) {
+        if (frase[i] != frase[j])
+            return 0;
+    }
+    return 1;
+}
+
+int main() {
+    char frase[101];
+    printf("Informe a frase: ");
+    scanf("%[^\n]", frase);
+    if (palindromo(frase))
+        printf("A palavra é um palíndromo.\n");
+    else
+        printf("A palavra não é um palíndromo.\n");
+    return 0;
+}
+*/
+
+// 12
+/*
+#include <stdio.h>
+
+int impares(int vetor[]) {
+    int i, impares=0;
+    for(i=0; i < 10; i++) {
+        if(vetor[i] % 2 != 0)
+            impares++;
+    }
+    return impares;
+}
+
+int main() {
+    int i, numeros[10];
+    printf("Informe os valores: ");
+    for(i=0; i < 10; i++) {
+        scanf("%d", &numeros[i]);
+    }
+    printf("Existem %d números impares.\n", impares(numeros));
+    return 0;
+*/
+
+// 16
+/*
+#include <stdio.h>
+
+int numero() {
+    int i;
+    for (i=1000; i < 9999; i++) {
+        int primeiros, segundos, soma;
+        segundos = i % 100;
+        primeiros = i / 100;
+        soma = primeiros + segundos;
+        if (soma * soma == i)
+            printf("%d\n", i);
+    }
+}
+
+int main() {
+    numero();
+    return 0;
+}
+*/
+
+// 17
+/*
+#include <stdio.h>
+
+const float pi = 3.14;
+
+float area(int raio) {
+    return pi * (raio * raio);
+}
+
+float perimetro(int raio) {
+    return pi * raio * 2;
+}
+
+int main() {
+    int raio;
+    printf("Informe o raio do círculo: ");
+    scanf("%d", &raio);
+    printf("Área = %.2f\n", area(raio));
+    printf("Perímetro = %.2f", perimetro(raio));
+    return 0;
+}
+*/
+
