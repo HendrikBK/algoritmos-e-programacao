@@ -244,3 +244,155 @@ int main() {
 }
 */
 
+// 18
+/*
+#include <stdio.h>
+
+float celsius(float temp) {
+    return ((temp - 32)/9) * 5;
+}
+
+int main() {
+    float temp;
+    printf("Informe a temperatura em Fahrenheits (°F): ");
+    scanf("%f", &temp);
+    printf("%.1f °F = %.1f °C\n", temp, celsius(temp));
+    return 0;
+}
+*/
+
+// 19
+/*
+#include <stdio.h>
+
+void media(float nota1, float nota2) {
+    if ((nota1 + nota2)/2 >= 6)
+        printf("PARABÉNS! Você foi aprovado.\n");
+    else
+        printf("Infelizmente você não foi aprovado.\n");
+}
+
+int main() {
+    float nota1, nota2;
+    printf("Informe a primeira nota: ");
+    scanf("%f", &nota1);
+    printf("Informe a segunda nota: ");
+    scanf("%f", &nota2);
+    media(nota1, nota2);
+    return 0;
+}
+*/
+
+// 20
+/*
+#include <stdio.h>
+
+float pesoideal(int genero, float altura) {
+    if (genero == 1) {
+        return (62.1 * altura) - 44.7;
+    } else {
+        return (72.7 * altura) - 58;
+    }
+}
+
+int main() {
+    float altura,
+    int genero;
+    printf("Informe o gênero (F:1 | M: 2): ");
+    scanf("%d", &genero);
+    printf("Informe a altura (m): ");
+    scanf("%f", &altura);
+    printf("Peso ideal: %.2f Kg\n", pesoideal(genero, altura));
+    return 0;
+}
+*/
+
+// 22
+/*
+#include <stdio.h>
+
+void separar(int valores[], int *i_pares, int *i_impares, int pares[], int impares[]) {
+    int i;
+    for (i=0; i < 10; i++) {
+        if (valores[i] % 2 == 0) {
+            pares[*i_pares] = valores[i];
+            (*i_pares)++;
+        } else {
+            impares[*i_impares] = valores[i];
+            (*i_impares)++;
+        }
+    }
+}
+
+void mostrar(int pares[], int impares[], int *i_pares, int *i_impares) {
+    int i;
+    printf("Valores pares: \n");
+    for(i=0; i < *i_pares; i++) {
+        printf("%d", pares[i]);
+    }
+    printf("\nValores impares: \n");
+    for(i=0; i < *i_impares; i++) {
+        printf("%d", impares[i]);
+    }
+}
+
+int main() {
+    int i, valores[10], pares[10], impares[10], i_pares=0, i_impares=0;
+    printf("Informe os valores do vetor: ");
+    for (i=0; i < 10; i++) {
+        scanf("%d", &valores[i]);
+    }
+    separar(valores, &i_pares, &i_impares, pares, impares);
+    mostrar(pares, impares, &i_pares, &i_impares);
+    return 0;
+}
+*/
+
+// 26
+
+#include <stdio.h>
+
+void montar(int matriz[][10], int dimen) {
+    int i, j;
+    printf("Informe o valores da matriz: \n");
+    for (i=0; i < dimen; i++) {
+        printf("Linha %d:\n", i);
+        for (j=0; j < dimen; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+}
+
+int verificar(int matriz[][10], int dimen, int *x, int *y, int valor) {
+    int i, j;
+    for (i=0; i < dimen; i++) {
+        for (j=0; j < dimen; j++) {
+            if (matriz[i][j] == valor) {
+                *y = i;
+                *x = j;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+int main() {
+    int dimen=10;
+    do {
+        printf("Informe a dimensão da matriz: ");
+        scanf("%d", &dimen);
+        if (dimen > 10 || dimen < 1)
+            printf("Valor inválido. Informe um valor entre 1 e 10.\n");
+    } while (dimen > 10 || dimen < 1);
+    int matriz[dimen][dimen], x, y, valor;
+    montar(matriz, dimen);
+    printf("Informe um valor: ");
+    scanf("%d", &valor);
+    if (verificar(matriz, dimen, &x, &y, valor)) {
+        printf("Coordenadas onde o valor %d se encontra na matriz: %d:%d\n", valor, x, y);
+    } else {
+        printf("O valor %d não se encontra na matriz.\n", valor);
+    }
+    return 0;
+}
